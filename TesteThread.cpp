@@ -34,15 +34,17 @@ int main(){
 
     //Antes de colocar essas threads, o tempo foi de 15 s
     std::thread t1(findEven, start, end);
-    std::thread t2(findEven, start, end);
+    std::thread t2(findOdd, start, end);
 
     //iniciando as threads
     t1.join();
     t2.join();
 
+    /*
     //Apos criar as threads estas funcoes nao tem mais serventia, porque t1 e t2 jah estao chamada as funcoes
-    /*findOdd(start, end);
-    findEven(start, end);*/
+    findOdd(start, end);
+    findEven(start, end);
+    */
 
     //final da contagem e estamacao da duracao
     auto stopTime = high_resolution_clock::now();
